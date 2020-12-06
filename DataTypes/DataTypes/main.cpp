@@ -15,7 +15,7 @@ void main()
 	//3. unsigned signed
 	/*short int 2B
 	long int
-	int 
+	int
 	long long int*/
 
 	//cout << "Тип данных short занимает " << sizeof(short int) << " Байт памяти, и принимает занчения в диапазоне" << endl;
@@ -48,11 +48,54 @@ void main()
 	int speed = 0;
 	const int MAX_SPEED = 250;
 
+	3;
+	-3;
+	8 - 3;
+	8 * 3;
+	//*3;
 
+	/*cout << 7 / 5 << endl;
+	cout << 7 % 5 << endl;
+	cout << 5 % 7 << endl;
+	double a = 2.5*2+3;
+	cout << 2 % 2 << endl;*/
+	int a, b, c;
+	a = b = c = 0;
+
+	const double PI = 3.14;
+	//PI = 3.14157;
+
+	//3. Increment / Decrement(++ / --)
+	//int i = 0;
+	//cout << ++i << endl;
+	//++i;	//Prefix increment
+	//i++;	//Postfix increment
+	//--i;	//Prefix decrement
+	//i--;	//Suffix decrement
+	//int j = i++;
+	//cout << j << endl;
+
+	int i = 3;
+	i = ++i + ++i;
+	cout << i << endl;
+
+	i = i + 5;
+	cout << i << endl;
+	i += 5;
+	cout << i << endl;
+}
+
+/*
+------------------------------
 
 	Unary
 	Binary
 	Ternary
+	3;
+	a=b+c*d;
 
-
-}
+	3. Increment/Decrement (++/--)
+	Increment (++) - это унарный оператор
+	Decrement (--) -
+------------------------------
+*/
