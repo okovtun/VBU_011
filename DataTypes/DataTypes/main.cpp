@@ -75,14 +75,17 @@ void main()
 	//int j = i++;
 	//cout << j << endl;
 
-	int i = 3;
+	/*int i = 3;
 	i = ++i + ++i;
 	cout << i << endl;
 
 	i = i + 5;
 	cout << i << endl;
 	i += 5;
-	cout << i << endl;
+	cout << i << endl;*/
+
+	//cout << (bool)0.001 << endl;
+	cout << (true == !false) << endl;
 }
 
 /*
@@ -98,4 +101,11 @@ void main()
 	Increment (++) - это унарный оператор
 	Decrement (--) -
 ------------------------------
+*/
+
+
+/*
+!  - NOT
+|| - OR
+&& - AND
 */
