@@ -1,107 +1,213 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;;
 
-#define intro1  "Please enter the number to be transformed to grn"
-#define exit  "Для выхода нижмите ecp, для продолжения нажмите любу. клавишу"
-/*Задача 1.
-Написать программу, которая преобразует введенное с клавиатуры дробное число в денежный формат.Например, число 12, 5 должно быть преобразовано к виду 12 грн. 50 коп.
-Преобразование числа в денежный формат.
-Введите дробное число -> 23.6
-23.6 грн.— это 23 грн. 60 коп.*/
+//#define FACTORIAL
+//#define POWER
+//#define ASCII
+//#define CALC_IF
+//#define CALC_SWITCH
+#define SHOOTER
 
-//x86
-//IA-16
-//IA-32
-//x86-64
-//IA-64
-//ARM
+#define Escape		27
+#define ARROW_UP	72
+#define ARROW_DOWN	80
+#define ARROW_LEFT	75
+#define ARROW_RIGHT	77
 
-//#define TASK_1
-//#define TASK_2
-//#define TASK_3
-#define TASK_4
+#define delimiter "\n-------------------------------------------------\n"
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
 
-#if defined TASK_1
-	//Задача 1
-	float price;
-	int grn, kop;
-	cout << intro1 << endl; cin >> price;
-	price += .000001;
-	grn = price;
-	kop = 100 * price - 100 * grn;
-	//kop = 100*price - 100*grn;
-	cout << grn << " grn." << kop << "kop." << endl;
+#if defined FACTORIAL
+	//		5! = 1*2*3*4*5 = 120;
+	int n;	//Число, вводимое с клавиатуры
+	double f = 1;	//Факториал введенного числа
+	cout << "Введите число: "; cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		cout << i << "! = ";
+		f *= i;
+		cout << f << endl;
+	}
+	cout << endl;
+	DBL_MIN;
 #endif
 
-#ifdef TASK_2
-	//Задача 2
-//Написать программу вычисления стоимости покупки, состоящей из нескольких тетрадей и карандашей.Ниже приведен рекомендуемый вид экрана во время выполнения программы .
-//	Вычисление стоимости покупки.
-//	Введите исходные данные :
-//Цена тетради(грн.) -> 2.75
-//	Количество тетрадей -> 5
-//	Цена карандаша(грн.) -> 0.85
-//	Количество карандашей -> 2
-//	Стоимость покупки : 15.45 грн.
+#if defined POWER
+	double a;	//Основание степени
+	int n;	//Показатель степени
+	double N = 1;	//Степень
+	cout << "Введите основание степени: "; cin >> a;
+	cout << "Введите показатель степени: "; cin >> n;
+	cout << a << " ^ " << n << " = ";
+	if (n < 0)
+	{
+		a = 1 / a;
+		n = -n;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		N *= a;
+	}
+	cout << N << endl;
+#endif
+
+#if defined ASCII
+	cout << "ASCII-таблица одним for-ом:\n";
+	setlocale(LC_ALL, "C");
+	for (int i = 0; i < 256; i++)
+	{
+		if (i % 16 == 0)cout << endl;
+		cout << (char)i << " ";
+	}
+	cout << endl;
+	cout << "\n-----------------------------------------------\n";
+	setlocale(LC_ALL, "Russian");
+	cout << "ASCII-таблица вложеддным for-ом:\n";
+	setlocale(LC_ALL, "C");
+	for (int i = 0; i < 16; i++)
+	{
+		for (int j = 0; j < 16; j++)
+		{
+			cout << char(i * 16 + j) << " ";
+		}
+		cout << endl;
+	}
+#endif
+
+#if defined CALC_IF
+	//2+3
+	double a, b;//Числа, вводмые с клавиатуры
+	char s;		//Sign - знак операции
+	double result = 0;
+	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
+	if (s == '+')
+	{
+		result = a + b;
+		cout << a << " " << s << " " << b << " = " << result << endl;
+	}
+	else if (s == '-')
+	{
+		if (a >= b)
+		{
+			result = a - b;
+			cout << a << " " << s << " " << b << " = " << result << endl;
+		}
+		else cout << "Так делать НИЗЯ, два балаа!! И выдите из класса." << endl;
+	}
+	else if (s == '*')
+	{
+		//result = a * b;
+		cout << a << " " << s << " " << b << " = " << a * b << endl;
+	}
+	else if (s == '/')
+	{
+		if (b != 0)
+		{
+			result = a / b;
+			cout << a << " " << s << " " << b << " = " << a / b << endl;
+		}
+		else
+		{
+			cout << "Error: На ноль делить нельзя" << endl;
+		}
+	}
+	else
+	{
+		cout << "Error: No operation" << endl;
+	}
+
+	//if (s == '+' || s == '-' || s == '*' || s == '/')
+	//	cout << a << " " << s << " " << b << " = " << result << endl;
+#endif
+
+#ifdef SWITCH_SYNTAX
+#define CONST_1 1
+#define CONST_2 2
+#define CONST_3 3
+#define CONST_N N
+	int var = 0;
 
 
-	float textbook_price, pencil_price, total_price;
-	int textbook_qnt, pencil_qnt;
-	cout << "Вычисление стоимости покупки." << endl << "Введите исходные данные :" << endl;
-	cout << "Цена тетради(грн.)" << endl; cin >> textbook_price;
-	cout << "Количество тетрадей" << endl; cin >> textbook_qnt;
-	cout << "Цена карандаша(грн.)" << endl; cin >> pencil_price;
-	cout << "Количество карандашей" << endl; cin >> pencil_qnt;
-	total_price = textbook_price * textbook_qnt + pencil_price * pencil_qnt;
-	cout << "Стоимость покупки : " << total_price << " грн." << endl;
-#endif // TASK_2
 
-#ifdef TASK_3
-	//Задача 3
-/*Написать программу вычисления стоимости покупки, состоящей из нескольких тетрадей и такого же количества обложек к ним.Ниже приведен рекомендуемый вид экрана во время выполнения программы.
-	Вычисление стоимости покупки.
-	Введите исходные данные :
-Цена тетради(грн.) -> 2.75
-	Цена обложки(грн.) -> 0.5
-	Количество комплектов(шт.) -> 7
-	Стоимость покупки : 22.75 грн.*/
-	float textbook_price, cover_price;
-	int number_of_sets;
-	cout << "Вычисление стоимости покупки." << endl << "Введите исходные данные :" << endl;
-	cout << "Цена тетради(грн.)" << endl; cin >> textbook_price;
-	cout << "Цена обложки(грн.)" << endl; cin >> cover_price;
-	cout << "Количество комплектов(шт.)" << endl; cin >> number_of_sets;
-	cout << "Стоимость покупки : " << number_of_sets * (textbook_price + cover_price) << " грн." << endl;
-#endif // TASK_3
+	switch (var)
+	{
+	case CONST_1: code1; break;
+	case CONST_2: code2; break;
+		...........;
+		...........;
+		...........;
+	case CONST_N: codeN; break;
+	default: Default code;
+	}
+	//var - это переменная, по значению которой switch выбирает какой выриант кода (case) нужно выполнить;
+	//case - случай, ситуация, вхождение.  
+#endif // SWITCH_SYNTAX
 
-#ifdef TASK_4
-	//Задача 4
-/*Написать программу вычисления стоимости поездки на автомобиле на дачу(туда и обратно).Исходными данными являются : расстояние до дачи(км); количество бензина, которое потребляет автомобиль на 100 км пробега; цена одного литра бензина.Ниже приведен рекомендуемый вид экрана во время выполнения программы .
-	Вычисление стоимости поездки на дачу и обратно.
-	Расстояние до дачи(км) ->67
-	Расход бензина(литров на 100 км пробега) ->8.5
-	Цена литра бензина(грн.) ->7.6
-	Поездка на дачу и обратно обойдется в ___ грн.*/
+#if defined CALC_SWITCH
+	double a, b;//Числа, вводимые с клавиатуры
+	char s;		//Sign - знак операции
+	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
+	switch (s)
+	{
+	case '+': cout << a << " + " << b << " = " << a + b << endl; break;
+	case '-': cout << a << " - " << b << " = " << a - b << endl; break;
+	case '*': cout << a << " * " << b << " = " << a * b << endl; break;
+	case '/': 
+		if(b!=0)cout << a << " / " << b << " = " << a / b << endl; 
+		else cout << "Error: На ноль делить нельзя" << endl;
+		break;
+	default: cout << "Error: No operation" << endl;
+	}
+#endif
 
+#if defined SHOOTER
+	char key;
+	do
+	{
+		key = _getch();
+		//cout << (int)key << "\t" << key << endl;
+		/*if (key == 'w' || key == 'W' || key == ARROW_UP)
+			cout << "Вперед" << endl;
+		else if (key == 's' || key == 'S' || key == ARROW_DOWN)
+			cout << "Назад" << endl;
+		else if (key == 'a' || key == 'A' || key == ARROW_LEFT)
+			cout << "Влево" << endl;
+		else if (key == 'd' || key == 'D' || key == ARROW_RIGHT)
+			cout << "Вправо" << endl;
+		else if (key == ' ')
+			cout << "Шо тут думать, прыгать надо" << endl;
+		else
+			if(key != -32 && key != Escape)
+				cout << "Error" << endl;*/
 
-	float distance, consumption, gazoline_price, sum;
-	cout << "Вычисление стоимости поездки на дачу и обратно." << endl;
-	cout << "Расстояние до дачи(км) " << endl; cin >> distance;
-	cout << "Расход бензина(литров на 100 км пробега) " << endl; cin >> consumption;
-	cout << "Цена литра бензина(грн.) " << endl; cin >> gazoline_price;
-	sum = (distance / 100) * consumption * gazoline_price;
-	cout << "Поездка на дачу и обратно обойдется в " << sum << " грн." << endl;
-
-	cout << exit << endl;
-	if (_getch() != 27) main();
-#endif // TASK_4
-
+		switch (key)
+		{
+		case 'w':
+		case 'W':
+		case ARROW_UP: cout << "Вперед" << endl; break;
+		case 's': 
+		case 'S': 
+		case ARROW_DOWN: cout << "Назад" << endl; break;
+		case 'a': 
+		case 'A': 
+		case ARROW_LEFT: cout << "Влево" << endl; break;
+		case 'd': 
+		case 'D': 
+		case ARROW_RIGHT: cout << "Вправо" << endl; break;
+		case ' ': cout << "Прыжок" << endl; break;
+		case 13:  cout << "Огонь" << endl; break;
+		case Escape: cout << "Exit" << endl;
+		case -32:break;
+		default:  cout << "Error" << endl;
+		}
+	} while (key != Escape);
+#endif
 
 }
-
-
