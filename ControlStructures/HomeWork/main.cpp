@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<conio.h>
 using namespace std;
 using std::cin;
@@ -26,9 +26,9 @@ void main()
 
 #if defined FACTORIAL
 	//		5! = 1*2*3*4*5 = 120;
-	int n;	//Число, вводимое с клавиатуры
-	double f = 1;	//Факториал введенного числа
-	cout << "Введите число: "; cin >> n;
+	int n;	//Р§РёСЃР»Рѕ, РІРІРѕРґРёРјРѕРµ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
+	double f = 1;	//Р¤Р°РєС‚РѕСЂРёР°Р» РІРІРµРґРµРЅРЅРѕРіРѕ С‡РёСЃР»Р°
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "; cin >> n;
 	for (int i = 1; i <= n; i++)
 	{
 		cout << i << "! = ";
@@ -40,11 +40,11 @@ void main()
 #endif
 
 #if defined POWER
-	double a;	//Основание степени
-	int n;	//Показатель степени
-	double N = 1;	//Степень
-	cout << "Введите основание степени: "; cin >> a;
-	cout << "Введите показатель степени: "; cin >> n;
+	double a;	//РћСЃРЅРѕРІР°РЅРёРµ СЃС‚РµРїРµРЅРё
+	int n;	//РџРѕРєР°Р·Р°С‚РµР»СЊ СЃС‚РµРїРµРЅРё
+	double N = 1;	//РЎС‚РµРїРµРЅСЊ
+	cout << "Р’РІРµРґРёС‚Рµ РѕСЃРЅРѕРІР°РЅРёРµ СЃС‚РµРїРµРЅРё: "; cin >> a;
+	cout << "Р’РІРµРґРёС‚Рµ РїРѕРєР°Р·Р°С‚РµР»СЊ СЃС‚РµРїРµРЅРё: "; cin >> n;
 	cout << a << " ^ " << n << " = ";
 	if (n < 0)
 	{
@@ -59,7 +59,7 @@ void main()
 #endif
 
 #if defined ASCII
-	cout << "ASCII-таблица одним for-ом:\n";
+	cout << "ASCII-С‚Р°Р±Р»РёС†Р° РѕРґРЅРёРј for-РѕРј:\n";
 	setlocale(LC_ALL, "C");
 	for (int i = 0; i < 256; i++)
 	{
@@ -69,7 +69,7 @@ void main()
 	cout << endl;
 	cout << "\n-----------------------------------------------\n";
 	setlocale(LC_ALL, "Russian");
-	cout << "ASCII-таблица вложеддным for-ом:\n";
+	cout << "ASCII-С‚Р°Р±Р»РёС†Р° РІР»РѕР¶РµРґРґРЅС‹Рј for-РѕРј:\n";
 	setlocale(LC_ALL, "C");
 	for (int i = 0; i < 16; i++)
 	{
@@ -83,10 +83,10 @@ void main()
 
 #if defined CALC_IF
 	//2+3
-	double a, b;//Числа, вводмые с клавиатуры
-	char s;		//Sign - знак операции
+	double a, b;//Р§РёСЃР»Р°, РІРІРѕРґРјС‹Рµ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
+	char s;		//Sign - Р·РЅР°Рє РѕРїРµСЂР°С†РёРё
 	double result = 0;
-	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
+	cout << "Р’РІРµРґРёС‚Рµ РїСЂРѕСЃС‚РѕРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ: "; cin >> a >> s >> b;
 	if (s == '+')
 	{
 		result = a + b;
@@ -99,7 +99,7 @@ void main()
 			result = a - b;
 			cout << a << " " << s << " " << b << " = " << result << endl;
 		}
-		else cout << "Так делать НИЗЯ, два балаа!! И выдите из класса." << endl;
+		else cout << "РўР°Рє РґРµР»Р°С‚СЊ РќРР—РЇ, РґРІР° Р±Р°Р»Р°Р°!! Р РІС‹РґРёС‚Рµ РёР· РєР»Р°СЃСЃР°." << endl;
 	}
 	else if (s == '*')
 	{
@@ -115,7 +115,7 @@ void main()
 		}
 		else
 		{
-			cout << "Error: На ноль делить нельзя" << endl;
+			cout << "Error: РќР° РЅРѕР»СЊ РґРµР»РёС‚СЊ РЅРµР»СЊР·СЏ" << endl;
 		}
 	}
 	else
@@ -146,14 +146,14 @@ void main()
 	case CONST_N: codeN; break;
 	default: Default code;
 	}
-	//var - это переменная, по значению которой switch выбирает какой выриант кода (case) нужно выполнить;
-	//case - случай, ситуация, вхождение.  
+	//var - СЌС‚Рѕ РїРµСЂРµРјРµРЅРЅР°СЏ, РїРѕ Р·РЅР°С‡РµРЅРёСЋ РєРѕС‚РѕСЂРѕР№ switch РІС‹Р±РёСЂР°РµС‚ РєР°РєРѕР№ РІС‹СЂРёР°РЅС‚ РєРѕРґР° (case) РЅСѓР¶РЅРѕ РІС‹РїРѕР»РЅРёС‚СЊ;
+	//case - СЃР»СѓС‡Р°Р№, СЃРёС‚СѓР°С†РёСЏ, РІС…РѕР¶РґРµРЅРёРµ.  
 #endif // SWITCH_SYNTAX
 
 #if defined CALC_SWITCH
-	double a, b;//Числа, вводимые с клавиатуры
-	char s;		//Sign - знак операции
-	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
+	double a, b;//Р§РёСЃР»Р°, РІРІРѕРґРёРјС‹Рµ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
+	char s;		//Sign - Р·РЅР°Рє РѕРїРµСЂР°С†РёРё
+	cout << "Р’РІРµРґРёС‚Рµ РїСЂРѕСЃС‚РѕРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ: "; cin >> a >> s >> b;
 	switch (s)
 	{
 	case '+': cout << a << " + " << b << " = " << a + b << endl; break;
@@ -161,7 +161,7 @@ void main()
 	case '*': cout << a << " * " << b << " = " << a * b << endl; break;
 	case '/': 
 		if(b!=0)cout << a << " / " << b << " = " << a / b << endl; 
-		else cout << "Error: На ноль делить нельзя" << endl;
+		else cout << "Error: РќР° РЅРѕР»СЊ РґРµР»РёС‚СЊ РЅРµР»СЊР·СЏ" << endl;
 		break;
 	default: cout << "Error: No operation" << endl;
 	}
@@ -174,15 +174,15 @@ void main()
 		key = _getch();
 		//cout << (int)key << "\t" << key << endl;
 		/*if (key == 'w' || key == 'W' || key == ARROW_UP)
-			cout << "Вперед" << endl;
+			cout << "Р’РїРµСЂРµРґ" << endl;
 		else if (key == 's' || key == 'S' || key == ARROW_DOWN)
-			cout << "Назад" << endl;
+			cout << "РќР°Р·Р°Рґ" << endl;
 		else if (key == 'a' || key == 'A' || key == ARROW_LEFT)
-			cout << "Влево" << endl;
+			cout << "Р’Р»РµРІРѕ" << endl;
 		else if (key == 'd' || key == 'D' || key == ARROW_RIGHT)
-			cout << "Вправо" << endl;
+			cout << "Р’РїСЂР°РІРѕ" << endl;
 		else if (key == ' ')
-			cout << "Шо тут думать, прыгать надо" << endl;
+			cout << "РЁРѕ С‚СѓС‚ РґСѓРјР°С‚СЊ, РїСЂС‹РіР°С‚СЊ РЅР°РґРѕ" << endl;
 		else
 			if(key != -32 && key != Escape)
 				cout << "Error" << endl;*/
@@ -191,18 +191,18 @@ void main()
 		{
 		case 'w':
 		case 'W':
-		case ARROW_UP: cout << "Вперед" << endl; break;
+		case ARROW_UP: cout << "Р’РїРµСЂРµРґ" << endl; break;
 		case 's': 
 		case 'S': 
-		case ARROW_DOWN: cout << "Назад" << endl; break;
+		case ARROW_DOWN: cout << "РќР°Р·Р°Рґ" << endl; break;
 		case 'a': 
 		case 'A': 
-		case ARROW_LEFT: cout << "Влево" << endl; break;
+		case ARROW_LEFT: cout << "Р’Р»РµРІРѕ" << endl; break;
 		case 'd': 
 		case 'D': 
-		case ARROW_RIGHT: cout << "Вправо" << endl; break;
-		case ' ': cout << "Прыжок" << endl; break;
-		case 13:  cout << "Огонь" << endl; break;
+		case ARROW_RIGHT: cout << "Р’РїСЂР°РІРѕ" << endl; break;
+		case ' ': cout << "РџСЂС‹Р¶РѕРє" << endl; break;
+		case 13:  cout << "РћРіРѕРЅСЊ" << endl; break;
 		case Escape: cout << "Exit" << endl;
 		case -32:break;
 		default:  cout << "Error" << endl;
