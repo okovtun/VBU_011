@@ -1,213 +1,113 @@
 ﻿#include<iostream>
-#include<conio.h>
 using namespace std;
-using std::cin;
-using std::cout;
-using std::endl;;
 
-//#define FACTORIAL
-//#define POWER
-//#define ASCII
-//#define CALC_IF
-//#define CALC_SWITCH
-#define SHOOTER
-
-#define Escape		27
-#define ARROW_UP	72
-#define ARROW_DOWN	80
-#define ARROW_LEFT	75
-#define ARROW_RIGHT	77
-
-#define delimiter "\n-------------------------------------------------\n"
+//#define TRIANGLE4
+//#define RHOMBUS
+#define CHESS
+//#define ARRAYS
 
 void main()
+// Здравствуйте Олег. Сделала только последний треугольник
+//Пыталась сделать ромб, беда в том что (пробелы, палки, потом снова пробелы...) 
+//	--палки только две в строке, и они разные, для их вывода не нужен цикл.
+//Пыталась спустить один треугольник под другой вообще билибирда получается.
+//	--спускать нужно каждую строку
+// чтобы после палок был пробел нужно условие?? НЕТ а потом оба этих треугольника отобразить зеркально?? 
+//или я не права? Не совсем
+// Шахматы--хотела сделать один большой квадрат из * а затем разбить его на 5*5 квадратиков 
+//и расположить в шахматном порядке..Миссия провалилась..мне кажется 
+// у меня неверное условие, а возможно и вся идея...
+//-- Нет, как раз и идея и условие огонь, просто нужно было сразу +- делать, на звездах не видно.
+////////////////////////////////////////////////////////////
+// массив я прочитала, и ваш код на github посмотрела, вы не смотрите что в кругл.скоб. 
+//пусто я и цифры записывала, но компилятор все время ругался на точки запятой..не поняла 
+//буду еще читать
+//Да, про массивы еще почитайте, это будет наша следующая тема.
+
+#ifdef TRIANGLE4
 {
-	setlocale(LC_ALL, "Russian");
-
-#if defined FACTORIAL
-	//		5! = 1*2*3*4*5 = 120;
-	int n;	//Число, вводимое с клавиатуры
-	double f = 1;	//Факториал введенного числа
-	cout << "Введите число: "; cin >> n;
-	for (int i = 1; i <= n; i++)
-	{
-		cout << i << "! = ";
-		f *= i;
-		cout << f << endl;
-	}
-	cout << endl;
-	DBL_MIN;
-#endif
-
-#if defined POWER
-	double a;	//Основание степени
-	int n;	//Показатель степени
-	double N = 1;	//Степень
-	cout << "Введите основание степени: "; cin >> a;
-	cout << "Введите показатель степени: "; cin >> n;
-	cout << a << " ^ " << n << " = ";
-	if (n < 0)
-	{
-		a = 1 / a;
-		n = -n;
-	}
+	setlocale(LC_ALL, "");
+	int n;
+	cout << "Введите число:"; cin >> n;
 	for (int i = 0; i < n; i++)
 	{
-		N *= a;
-	}
-	cout << N << endl;
-#endif
-
-#if defined ASCII
-	cout << "ASCII-таблица одним for-ом:\n";
-	setlocale(LC_ALL, "C");
-	for (int i = 0; i < 256; i++)
-	{
-		if (i % 16 == 0)cout << endl;
-		cout << (char)i << " ";
-	}
-	cout << endl;
-	cout << "\n-----------------------------------------------\n";
-	setlocale(LC_ALL, "Russian");
-	cout << "ASCII-таблица вложеддным for-ом:\n";
-	setlocale(LC_ALL, "C");
-	for (int i = 0; i < 16; i++)
-	{
-		for (int j = 0; j < 16; j++)
+		for (int j = i; j < n; j++)
 		{
-			cout << char(i * 16 + j) << " ";
+			cout << " ";
+		}
+		for (int j = 0; j <= i; j++)
+		{
+			cout << "*";
 		}
 		cout << endl;
 	}
-#endif
-
-#if defined CALC_IF
-	//2+3
-	double a, b;//Числа, вводмые с клавиатуры
-	char s;		//Sign - знак операции
-	double result = 0;
-	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
-	if (s == '+')
-	{
-		result = a + b;
-		cout << a << " " << s << " " << b << " = " << result << endl;
-	}
-	else if (s == '-')
-	{
-		if (a >= b)
-		{
-			result = a - b;
-			cout << a << " " << s << " " << b << " = " << result << endl;
-		}
-		else cout << "Так делать НИЗЯ, два балаа!! И выдите из класса." << endl;
-	}
-	else if (s == '*')
-	{
-		//result = a * b;
-		cout << a << " " << s << " " << b << " = " << a * b << endl;
-	}
-	else if (s == '/')
-	{
-		if (b != 0)
-		{
-			result = a / b;
-			cout << a << " " << s << " " << b << " = " << a / b << endl;
-		}
-		else
-		{
-			cout << "Error: На ноль делить нельзя" << endl;
-		}
-	}
-	else
-	{
-		cout << "Error: No operation" << endl;
-	}
-
-	//if (s == '+' || s == '-' || s == '*' || s == '/')
-	//	cout << a << " " << s << " " << b << " = " << result << endl;
-#endif
-
-#ifdef SWITCH_SYNTAX
-#define CONST_1 1
-#define CONST_2 2
-#define CONST_3 3
-#define CONST_N N
-	int var = 0;
-
-
-
-	switch (var)
-	{
-	case CONST_1: code1; break;
-	case CONST_2: code2; break;
-		...........;
-		...........;
-		...........;
-	case CONST_N: codeN; break;
-	default: Default code;
-	}
-	//var - это переменная, по значению которой switch выбирает какой выриант кода (case) нужно выполнить;
-	//case - случай, ситуация, вхождение.  
-#endif // SWITCH_SYNTAX
-
-#if defined CALC_SWITCH
-	double a, b;//Числа, вводимые с клавиатуры
-	char s;		//Sign - знак операции
-	cout << "Введите простое арифметическое выражение: "; cin >> a >> s >> b;
-	switch (s)
-	{
-	case '+': cout << a << " + " << b << " = " << a + b << endl; break;
-	case '-': cout << a << " - " << b << " = " << a - b << endl; break;
-	case '*': cout << a << " * " << b << " = " << a * b << endl; break;
-	case '/': 
-		if(b!=0)cout << a << " / " << b << " = " << a / b << endl; 
-		else cout << "Error: На ноль делить нельзя" << endl;
-		break;
-	default: cout << "Error: No operation" << endl;
-	}
-#endif
-
-#if defined SHOOTER
-	char key;
-	do
-	{
-		key = _getch();
-		//cout << (int)key << "\t" << key << endl;
-		/*if (key == 'w' || key == 'W' || key == ARROW_UP)
-			cout << "Вперед" << endl;
-		else if (key == 's' || key == 'S' || key == ARROW_DOWN)
-			cout << "Назад" << endl;
-		else if (key == 'a' || key == 'A' || key == ARROW_LEFT)
-			cout << "Влево" << endl;
-		else if (key == 'd' || key == 'D' || key == ARROW_RIGHT)
-			cout << "Вправо" << endl;
-		else if (key == ' ')
-			cout << "Шо тут думать, прыгать надо" << endl;
-		else
-			if(key != -32 && key != Escape)
-				cout << "Error" << endl;*/
-
-		switch (key)
-		{
-		case 'w':
-		case 'W':
-		case ARROW_UP: cout << "Вперед" << endl; break;
-		case 's': 
-		case 'S': 
-		case ARROW_DOWN: cout << "Назад" << endl; break;
-		case 'a': 
-		case 'A': 
-		case ARROW_LEFT: cout << "Влево" << endl; break;
-		case 'd': 
-		case 'D': 
-		case ARROW_RIGHT: cout << "Вправо" << endl; break;
-		case ' ': cout << "Прыжок" << endl; break;
-		case 13:  cout << "Огонь" << endl; break;
-		case Escape: cout << "Exit" << endl;
-		case -32:break;
-		default:  cout << "Error" << endl;
-		}
-	} while (key != Escape);
-#endif
-
 }
+#endif // TRIANGLE4
+
+#ifdef RHOMBUS
+{
+	setlocale(LC_ALL, "");
+	int n;
+	cout << "Введите число:"; cin >> n;
+	//Проще и удобнее верхнюю часть ромба вывести в одном форе, а нижнюю в другом.
+	//1) Верх:
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i+1; j < n; j++)
+		{
+			//i+1 это косметика, просто убирает одну итерацию, и следовательно один пробел.
+			cout << " ";
+		}
+		cout << "/";//Выводится 1 раз в строке, поэтому не в цикле
+		for (int j = 0; j < i; j++)
+		{
+			cout << "  ";
+		}
+		cout << "\\";//Почему два \ смотрите лекцию 1 (Escape-последовательности)
+		cout << endl;
+	}
+	//2) Низ:
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << " ";
+		}
+		cout << "\\";
+		for (int j = i+1; j < n; j++)
+		{
+			cout << "  ";
+		}
+		cout << "/";
+		cout << endl;
+	}
+}
+#endif // RHOMBUS
+
+#ifdef CHESS
+{
+	setlocale(LC_ALL, "");
+	int n = 20;
+	cout << "Введите число:"; cin >> n;
+	for (int i = 0; i <= n; i++)
+	{
+		for (int j = 0; j <= n; j++)
+		{
+			if ((i + j) % 2 == 0)
+				cout << "+ ";
+			else cout << "- ";
+		}
+
+	cout << endl;
+	}
+}
+
+#endif // CHESS
+
+#ifdef ARRAYS
+int n[] = {  };
+cout << n; cin >> n;
+
+
+#endif // ARRAYS
+
