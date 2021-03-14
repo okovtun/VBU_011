@@ -1,21 +1,21 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 #define tab "\t"
 
 void FillRand(int arr[], const int n)
 {
-	//Заполняем массив случайными числами:
+	//Р—Р°РїРѕР»РЅСЏРµРј РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё:
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand();
-		//Функция rand() возвращает псевдослучайное число в диапазоне от 0 до 32 767.
+		//Р¤СѓРЅРєС†РёСЏ rand() РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767.
 	}
 }
 
 void Print(int arr[], const int n)
 {
-	//Выводим массив на экран:
+	//Р’С‹РІРѕРґРёРј РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ:
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
@@ -23,9 +23,9 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void ShiftLeft(int arr[], const int n, const int number_of_shifts)	//Сдвигает массивна заданное число элементов
+void ShiftLeft(int arr[], const int n, const int number_of_shifts)	//РЎРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІРЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ
 {
-	for (int i = 0; i < number_of_shifts; i++)	//Этот цикл сдвигает массив на number_of_shifts элементов
+	for (int i = 0; i < number_of_shifts; i++)	//Р­С‚РѕС‚ С†РёРєР» СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° number_of_shifts СЌР»РµРјРµРЅС‚РѕРІ
 	{
 		int buffer = arr[0];
 		for (int j = 0; j < n; j++)
@@ -42,14 +42,14 @@ void main()
 	cout << "Hello functions!" << endl;
 	const int n = 5;
 	int arr[n];
-	//Заполняем массив случайными числами:
+	//Р—Р°РїРѕР»РЅСЏРµРј РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё:
 	//for (int i = 0; i < n; i++)
 	//{
 	//	arr[i] = rand();
-	//	//Функция rand() возвращает псевдослучайное число в диапазоне от 0 до 32 767.
+	//	//Р¤СѓРЅРєС†РёСЏ rand() РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767.
 	//}
 	FillRand(arr, n);
-	//Выводим массив на экран:
+	//Р’С‹РІРѕРґРёРј РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ:
 	/*for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
@@ -57,11 +57,11 @@ void main()
 	cout << endl;*/
 	Print(arr, n);
 
-	//Сдвиг массива на заданное число элементов:
+	//РЎРґРІРёРі РјР°СЃСЃРёРІР° РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ:
 	int number_of_shifts;
-	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ: "; cin >> number_of_shifts;
 	ShiftLeft(arr, n, number_of_shifts);
-	//Выводим сдвинутого массив на экран:
+	//Р’С‹РІРѕРґРёРј СЃРґРІРёРЅСѓС‚РѕРіРѕ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ:
 	/*for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
@@ -75,7 +75,7 @@ void main()
 	int brr[m];
 	FillRand(brr, m);
 	Print(brr, m);
-	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ: "; cin >> number_of_shifts;
 	ShiftLeft(brr, m, number_of_shifts);
 	Print(brr, m);
 }
