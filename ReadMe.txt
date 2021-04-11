@@ -6,6 +6,9 @@ https://www.ixbt.com/cpu/cpu-digest-2009.shtml
 http://cplusplus.com/doc/tutorial/arrays/
 
 TODO:
+От ветки "templated" создать ветку "templated_split", и в ней вынести шаблонные функции в отдельные файлы.
+
+DONE:
 0. Выучить теорию!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 1. Перегрузить функции FillRand(), Print(), Sum(), Avg(), minValueIn(), maxValueIn(), Sort(), ShiftLeft() и ShiftRight()
    для типов данных: float, double и char.
