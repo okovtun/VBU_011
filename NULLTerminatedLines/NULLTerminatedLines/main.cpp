@@ -24,6 +24,11 @@ void main()
 	cout << str << endl;
 	cout << sizeof(str) << endl;
 	cout << typeid(str).name() << endl;*/
+	
+	int t;
+	cout << "Введите температуру:"; cin >> t;
+	cout << (t > 0 ? "Тепло" : "Холодно") << endl;
+
 
 	/*cout << (int)'A' << endl;
 	cout << (int)'a' << endl;
